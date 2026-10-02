@@ -1,31 +1,89 @@
 [
   {
-    "id": "behooked-ai-intern",
-    "role": "AI Intern",
-    "company": "Behooked",
-    "type": "Internship · AI Systems",
-    "location": "Remote",
-    "liveUrl": null,
+    "id": "bulbul-creator",
+    "role": "Creator and Maintainer",
+    "company": "Bulbul",
+    "type": "Open Source Â· AI Voice Typing",
+    "location": null,
+    "liveUrl": "https://bulbultypes.xyz",
     "links": [
-      { "label": "Ad Studio", "url": "https://behooked.co/apps/adgen" },
-      { "label": "HouseTour", "url": "https://behooked.co/apps/housetour" },
-      { "label": "Transitions", "url": "https://behooked.co/apps/transitions" },
-      { "label": "SmartShot", "url": "https://behooked.co/apps/smartshot" }
+      {
+        "label": "Website",
+        "url": "https://bulbultypes.xyz"
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/codedpool/bulbul"
+      }
     ],
-    "startDate": "April 2026",
+    "startDate": "May 2026",
     "endDate": "Present",
     "current": true,
     "bullets": [
-      "Shipped Ad Studio (site scrape → brand kit → ad templates) and a transitions app with 24+ templates.",
-      "Built Behooked Assist, a multi-modal AI layer routing prompts across user-selected image and video inference models.",
-      "Engineered the HouseTour video pipeline bypassing Seedance's 15s generation cap: split the script into two chunks, fed the last frame + context into a second inference call, and merged both clips into a seamless 30s output."
+      "Solo-built Bulbul, a free and open-source AI voice typing app for Windows, macOS, Linux, and Android: hold a hotkey, speak, release, and clean text appears at the cursor.",
+      "Combined Whisper speech-to-text with an LLM cleanup layer and a BYOK design so users bring their own API keys.",
+      "Kept dictation ephemeral with no Bulbul-owned backend, so users' voice data is never stored.",
+      "Crossed 500+ downloads on GitHub releases, with users opening issues and requesting features, competing directly with established commercial voice-AI products."
+    ]
+  },
+  {
+    "id": "veersa-intern",
+    "role": "Software Engineer Intern",
+    "company": "Veersa Technologies",
+    "type": "Internship Â· Healthcare Technology",
+    "location": null,
+    "liveUrl": null,
+    "startDate": "July 2026",
+    "endDate": "September 2026",
+    "current": false,
+    "bullets": [
+      "Worked on Neovance, a healthcare technology product serving the US healthcare domain.",
+      "Built and maintained automated test workflows, including regression automation and end-to-end validation, to improve release confidence and cut manual testing.",
+      "Completed Vsarthi, Veersa's Campus-to-Corporate program, covering enterprise development workflows and healthcare-domain systems."
+    ]
+  },
+  {
+    "id": "behooked-ai-intern",
+    "role": "AI Intern",
+    "company": "Behooked",
+    "type": "Internship Â· AI Systems",
+    "location": "Remote",
+    "liveUrl": null,
+    "links": [
+      {
+        "label": "Ad Studio",
+        "url": "https://behooked.co/apps/adgen"
+      },
+      {
+        "label": "HouseTour",
+        "url": "https://behooked.co/apps/housetour"
+      },
+      {
+        "label": "Transitions",
+        "url": "https://behooked.co/apps/transitions"
+      },
+      {
+        "label": "SmartShot",
+        "url": "https://behooked.co/apps/smartshot"
+      }
+    ],
+    "startDate": "April 2026",
+    "endDate": "July 2026",
+    "current": false,
+    "bullets": [
+      "Built SmartShot, a cinematic video workflow that turns character and environment references plus a prompt into character sheets, shot plans, and consistent multi-shot videos.",
+      "Built Vibe Motion, generating motion-graphics videos from natural-language prompts or augmenting existing videos with AI-generated graphics and effects.",
+      "Built Behooked Assist, a multimodal AI layer routing prompts across user-selected image and video generation models.",
+      "Engineered the HouseTour real-estate video pipeline: two chained inference calls, passing the last frame and context forward, merged into a seamless 30s clip past the 15s generation cap.",
+      "Shipped Ad Studio (site scrape, brand kit, ad templates).",
+      "Shipped a transitions app with 24+ templates."
     ]
   },
   {
     "id": "mlh-coach",
     "role": "Coach",
     "company": "Major League Hacking (MLH)",
-    "type": "Part Time · Hackathon Mentorship & Judging",
+    "type": "Part Time Â· Hackathon Mentorship & Judging",
     "location": null,
     "liveUrl": null,
     "startDate": "January 2026",
