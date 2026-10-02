@@ -5,6 +5,12 @@ import Link from 'next/link';
 import { ExternalLink, Github, ArrowUpRight } from 'lucide-react';
 import projects from '@/data/projects.json';
 
+function getYouTubeId(url) {
+  if (!url) return null;
+  const m = url.match(/(?:youtu\.be\/|v=|embed\/)([A-Za-z0-9_-]{11})/);
+  return m ? m[1] : null;
+}
+
 function ImageWithFallback({ id, alt, image }) {
   const initial = image ? `/${image}` : `/${id}.png`;
   const [src, setSrc] = useState(initial);
@@ -53,6 +59,7 @@ function FrameBackdrop() {
 function ProjectCard({ project, index }) {
   const num = String(index + 1).padStart(2, '0');
   const marker = project.status || (project.featured ? 'Featured' : null);
+  const youtubeId = getYouTubeId(project.videoUrl);
 
   const openExternal = (e, url) => {
     e.preventDefault();
@@ -67,8 +74,21 @@ function ProjectCard({ project, index }) {
     >
       {/* Framed image */}
       <div className="relative aspect-[16/10] overflow-hidden border-b border-white/10 bg-[#0a0a0a]">
-        <FrameBackdrop />
-        <ImageWithFallback id={project.id} alt={project.title} image={project.image} />
+        {youtubeId ? (
+          <iframe
+            src={`https://www.youtube.com/embed/${youtubeId}?rel=0&modestbranding=1`}
+            title={`${project.title} video`}
+            className="absolute inset-0 h-full w-full"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        ) : (
+          <>
+            <FrameBackdrop />
+            <ImageWithFallback id={project.id} alt={project.title} image={project.image} />
+          </>
+        )}
         {marker && (
           <div className="absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-black/50 px-2.5 py-1 backdrop-blur-sm">
             <span className="h-1.5 w-1.5 rounded-full bg-amber-300" />
