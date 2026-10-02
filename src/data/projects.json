@@ -96,7 +96,7 @@
     "title": "RobinScouts",
     "image": "robinscouts.png",
     "videoUrl": "https://www.youtube.com/watch?v=PuWNTW3y3o0",
-    "highlight": "Top 50 of the hackathon globally.",
+    "highlight": "Top 50 of the WeMakeDevs × Bright Data hackathon globally.",
     "description": "RobinScouts is a hiring-change intelligence feed. Most job tools show what exists; RobinScouts shows what changed: every new posting, edited role and quietly closed listing across company career pages that are each built differently. Three custom Bright Data Scraper Studio collectors feed one normalized job schema, and the app deduplicates, diffs against the previous run and scores roles against your preferences. When a career page is redesigned and a scraper breaks, it repairs the scraper itself.",
     "shortDescription": "Hiring-change feed that tracks new, edited and closed roles across career pages, and repairs its own scrapers when pages change.",
     "demoUrl": "https://robinscouts.vercel.app",
