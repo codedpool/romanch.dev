@@ -6,6 +6,12 @@ import Link from 'next/link';
 import { ArrowLeft, ArrowUpRight, Github, ExternalLink, Award, Sparkles } from 'lucide-react';
 import projects from '@/data/projects.json';
 
+function getYouTubeId(url) {
+  if (!url) return null;
+  const m = url.match(/(?:youtu\.be\/|v=|embed\/)([A-Za-z0-9_-]{11})/);
+  return m ? m[1] : null;
+}
+
 function ImageWithFallback({ id, image, alt }) {
   const initial = image ? `/${image}` : `/${id}.png`;
   const [src, setSrc] = useState(initial);
@@ -134,6 +140,7 @@ export default function ProjectDetailsPage() {
   const sameCat = related.filter((p) => p.category === project.category);
   const more = [...sameCat, ...related.filter((p) => p.category !== project.category)].slice(0, 4);
   const hasCallout = project.highlight || project.aiNote;
+  const youtubeId = getYouTubeId(project.videoUrl);
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -176,7 +183,18 @@ export default function ProjectDetailsPage() {
               <FrameBackdrop />
               <div className="absolute inset-0 p-5 md:p-8">
                 <div className="relative h-full w-full">
-                  <ImageWithFallback id={project.id} image={project.image} alt={project.title} />
+                  {youtubeId ? (
+                    <iframe
+                      src={`https://www.youtube.com/embed/${youtubeId}?rel=0&modestbranding=1`}
+                      title={`${project.title} video`}
+                      className="h-full w-full"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                  ) : (
+                    <ImageWithFallback id={project.id} image={project.image} alt={project.title} />
+                  )}
                 </div>
               </div>
             </div>
