@@ -27,19 +27,17 @@
     ]
   },
   {
-    "id": "veersa-intern",
-    "role": "Software Engineer Intern",
-    "company": "Veersa Technologies",
-    "type": "Internship Â· Healthcare Technology",
+    "id": "mlh-coach",
+    "role": "Coach",
+    "company": "Major League Hacking (MLH)",
+    "type": "Part Time Â· Hackathon Mentorship & Judging",
     "location": null,
     "liveUrl": null,
-    "startDate": "July 2026",
-    "endDate": "September 2026",
-    "current": false,
+    "startDate": "January 2026",
+    "endDate": "Present",
+    "current": true,
     "bullets": [
-      "Worked on Neovance, a healthcare technology product serving the US healthcare domain.",
-      "Built and maintained automated test workflows, including regression automation and end-to-end validation, to improve release confidence and cut manual testing.",
-      "Completed Vsarthi, Veersa's Campus-to-Corporate program, covering enterprise development workflows and healthcare-domain systems."
+      "Contributing to the organization of hackathons, mentoring participants on project development and technical execution, and serving as a judge for evaluating submissions."
     ]
   },
   {
@@ -80,17 +78,19 @@
     ]
   },
   {
-    "id": "mlh-coach",
-    "role": "Coach",
-    "company": "Major League Hacking (MLH)",
-    "type": "Part Time Â· Hackathon Mentorship & Judging",
+    "id": "veersa-intern",
+    "role": "Software Engineer Intern",
+    "company": "Veersa Technologies",
+    "type": "Internship Â· Healthcare Technology",
     "location": null,
     "liveUrl": null,
-    "startDate": "January 2026",
-    "endDate": "Present",
-    "current": true,
+    "startDate": "July 2026",
+    "endDate": "September 2026",
+    "current": false,
     "bullets": [
-      "Contributing to the organization of hackathons, mentoring participants on project development and technical execution, and serving as a judge for evaluating submissions."
+      "Worked on Neovance, a healthcare technology product serving the US healthcare domain.",
+      "Built and maintained automated test workflows, including regression automation and end-to-end validation, to improve release confidence and cut manual testing.",
+      "Completed Vsarthi, Veersa's Campus-to-Corporate program, covering enterprise development workflows and healthcare-domain systems."
     ]
   },
   {
