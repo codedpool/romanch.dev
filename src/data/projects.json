@@ -367,4 +367,362 @@
     "featured": true,
     "features": [
       "Natural-Language Search: An LLM (Llama 3.3 70B via Groq) parses free-form queries into structured intent â€” role, tech stack, seniority, and location â€” so users find jobs by chatting instead of filling out forms.",
-      "Parallel Multi-Source Ingestion: Concurrent async fetchers fan out across 6+ job boards (LinkedIn, Indeed, 
+      "Parallel Multi-Source Ingestion: Concurrent async fetchers fan out across 6+ job boards (LinkedIn, Indeed, Google, Glassdoor via JobSpy, RemoteOK, Hacker News), each isolated to its own DB session to eliminate SQLAlchemy concurrency races, with wall-clock timeouts so one slow source never blocks the request.",
+      "Cross-Source Deduplication: SHA-256 fingerprinting with title/company normalization and canonical job-board ID extraction collapses the same role posted on multiple boards into a single card, keeping the richest copy.",
+      "Cost-Efficient LLM Scoring: Batch-of-5 scoring with a concurrency semaphore, exponential-backoff retry on rate limits (429), and single-job fallback â€” cutting token cost ~5x while scoring skills, seniority, and location (0â€“100 each) with a one-sentence rationale.",
+      "Freshness-Aware Ranking: Re-ranks by an effective score that blends the raw LLM match score with an exponential time-decay curve, plus a deterministic pre-LLM seniority title filter so an intern query never wastes budget scoring \"Principal Engineer\" roles.",
+      "Resilient Streaming Chat: Fresh Clerk JWTs minted per backend call survive 30s+ pipeline runs, with optimistic UI updates and abortable streams.",
+      "Monetization & Admin: Per-user search quotas across free / trial / unlimited plan tiers, plus an admin console for user management, access restriction, and plan grants â€” integrated with the Clerk user API."
+    ],
+    "techStack": {
+      "frontend": [
+        "Next.js 16",
+        "React 19",
+        "Tailwind CSS v4",
+        "shadcn/ui + Radix UI",
+        "Vercel AI SDK",
+        "Zustand",
+        "Clerk"
+      ],
+      "backend": [
+        "FastAPI (async)",
+        "SQLAlchemy 2.0 + asyncpg",
+        "PostgreSQL",
+        "Pydantic v2",
+        "Alembic"
+      ],
+      "aiAndData": [
+        "Groq (Llama 3.3 70B)",
+        "JobSpy + custom scrapers"
+      ]
+    }
+  },
+  {
+    "id": "fundhive",
+    "title": "FundHive",
+    "description": "A social media-inspired crowdfunding and investment platform where entrepreneurs pitch startup ideas, verified by Aadhaar/PAN, and connect with investors or crowdfunders for equity or rewards.",
+    "shortDescription": "Social crowdfunding platform connecting entrepreneurs with investors through verified pitches.",
+    "demoUrl": "https://fundhive.vercel.app/",
+    "codeUrl": "https://github.com/codedpool/fundhive",
+    "technologies": [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "AI",
+      "AWS S3",
+      "Auth0"
+    ],
+    "category": "FinTech",
+    "year": "2025",
+    "featured": true,
+    "features": [
+      "AI Insights: Groq-powered business viability score and analysis report.",
+      "Project Creation: Multi-step form to post startup ideas with details and media uploads.",
+      "Identity Verification: Aadhaar upload and PAN card input for creators.",
+      "Funding Options: Reward-based crowdfunding and equity investments with escrow system.",
+      "Negotiation: Custom amount/equity proposals with creator approval.",
+      "Social Engagement: Like, comment, and share projects in a dynamic feed.",
+      "Profile Management: Track investments, created projects, and negotiations.",
+      "Search & Filters: Browse projects by category, keyword, or trending status.",
+      "Notifications: Alerts for milestones and funding goal achievements.",
+      "Security: Auth0 authentication, AWS S3 for media uploads, and blockchain-simulated escrow."
+    ],
+    "techStack": {
+      "frontend": [
+        "React.js",
+        "Vite",
+        "TailwindCSS",
+        "Auth0",
+        "Lucide React"
+      ],
+      "backend": [
+        "Node.js",
+        "Express.js",
+        "MongoDB with Mongoose",
+        "AWS S3",
+        "Groq SDK",
+        "Multer"
+      ],
+      "deployment": [
+        "Vercel"
+      ],
+      "other": [
+        "REST API",
+        "SHA-256 blockchain simulation"
+      ]
+    }
+  },
+  {
+    "id": "codev",
+    "title": "Codev",
+    "description": "A collaborative code editor with AI-powered assistance, real-time collaboration, file management, and multi-language execution support.",
+    "shortDescription": "Real-time collaborative code editor with AI assistance and multi-language execution.",
+    "demoUrl": "https://codev-k6mg.onrender.com/",
+    "codeUrl": "https://github.com/codedpool/codev",
+    "technologies": [
+      "React",
+      "Node.js",
+      "Socket.IO",
+      "AI",
+      "MongoDB"
+    ],
+    "category": "Developer Tools",
+    "year": "2025",
+    "featured": false,
+    "features": [
+      "AI-Powered Assistance: Code completions, linting suggestions, and documentation generation.",
+      "File Management: Create, read, update, and delete project files.",
+      "Code Execution: Run code in multiple languages using JDoodle API.",
+      "Project Management: Create, list, and delete projects.",
+      "Real-Time Collaboration: Work with others via WebSockets.",
+      "Cloud Storage: Persistent storage with AWS S3.",
+      "Authentication: Secure login with Auth0."
+    ],
+    "techStack": {
+      "frontend": [
+        "React.js",
+        "Vite",
+        "Material-UI",
+        "CodeMirror",
+        "Auth0"
+      ],
+      "backend": [
+        "Node.js",
+        "Express.js",
+        "MongoDB with Mongoose",
+        "AWS SDK",
+        "JDoodle API",
+        "Groq SDK",
+        "Socket.IO"
+      ],
+      "other": [
+        "Auth0 authentication",
+        "Axios for API calls"
+      ]
+    }
+  },
+  {
+    "id": "mass-mail-sender",
+    "title": "Mass Mail Sender",
+    "image": "mailer.png",
+    "description": "A web application for sending personalized bulk emails with scheduling, tracking, and GDPR compliance features.",
+    "shortDescription": "GDPR-compliant bulk email platform with personalization and tracking capabilities.",
+    "demoUrl": "https://mailer1-d1qw.onrender.com/",
+    "codeUrl": "https://github.com/codedpool/mailer",
+    "technologies": [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Nodemailer"
+    ],
+    "category": "Marketing Tools",
+    "year": "2025",
+    "featured": false,
+    "features": [
+      "Personalized Emails: Tags like {{name}} and {{email}} for dynamic content.",
+      "Email Formats: Supports plain text, HTML, and Markdown.",
+      "Scheduling: Send emails at specific dates and times.",
+      "Tracking: Monitor open rates and click-through rates.",
+      "Batch Sending: Ensures compliance with service provider limits.",
+      "GDPR Compliance: Includes opt-out links and consent mechanisms.",
+      "Data Retention: Auto-deletes old campaigns and recipient data.",
+      "User Campaigns: Users manage only their campaigns."
+    ],
+    "techStack": {
+      "frontend": [
+        "React",
+        "Vite",
+        "Auth0"
+      ],
+      "backend": [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Nodemailer",
+        "Agenda"
+      ],
+      "other": [
+        "Multer (file uploads)",
+        "CSV Parser",
+        "Dotenv"
+      ]
+    }
+  },
+  {
+    "id": "authentitest",
+    "title": "AuthentiTest",
+    "description": "AuthentiTest is a comprehensive online examination platform designed to ensure academic integrity through advanced face detection and plagiarism checks. The application leverages AWS Rekognition for real-time face verification, Groq API for AI-generated content and plagiarism analysis, and integrates seamlessly with MongoDB for data persistence.",
+    "shortDescription": "Online exam platform with real-time face verification and AI/plagiarism detection.",
+    "demoUrl": "https://authentitest.onrender.com/",
+    "codeUrl": "https://github.com/codedpool/authentitest",
+    "technologies": [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "AI",
+      "AWS Rekognition",
+      "Groq API",
+      "Socket.IO"
+    ],
+    "category": "EdTech",
+    "year": "2025",
+    "featured": false,
+    "features": [
+      "Plagiarism & AI Detection: Analyze submitted answers to detect AI-generated content and plagiarism using Groq API.",
+      "User Authentication: Secure registration and login for both teachers and students.",
+      "Real-Time Face Detection: Continuous face scanning during exams to prevent impersonation using AWS Rekognition.",
+      "Dynamic Test Management: Teachers can create, assign, and manage tests; students can view assigned tests and submit answers.",
+      "Responsive UI: Built with React and Tailwind CSS for an intuitive user experience.",
+      "Socket.IO Integration: Real-time alerts and notifications for enhanced interactivity."
+    ],
+    "prerequisites": [
+      "Node.js (v18 or higher)",
+      "npm or yarn",
+      "MongoDB instance",
+      "AWS account with Rekognition access",
+      "Groq API key"
+    ],
+    "techStack": {
+      "frontend": [
+        "React",
+        "TailwindCSS"
+      ],
+      "backend": [
+        "Node.js",
+        "Express.js",
+        "Socket.IO",
+        "MongoDB"
+      ],
+      "aiIntegration": [
+        "Groq API"
+      ],
+      "vision": [
+        "AWS Rekognition"
+      ],
+      "authentication": [
+        "JWT",
+        "Auth0 (optional)"
+      ]
+    }
+  },
+  {
+    "id": "trendora",
+    "title": "Trendora",
+    "image": "trendora.png",
+    "description": "Trendora is a full-stack e-commerce application that lets users browse, purchase, and manage products with a smooth, responsive UI and a powerful admin dashboard.",
+    "shortDescription": "Full-stack e-commerce app with product management, cart, checkout and admin dashboard.",
+    "demoUrl": "https://trendora-xo3m.onrender.com/",
+    "codeUrl": "https://github.com/codedpool/trendora",
+    "technologies": [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "TailwindCSS",
+      "Cloudinary"
+    ],
+    "category": "E-commerce",
+    "year": "2025",
+    "featured": false,
+    "features": [
+      "User Authentication: Register, login, and profile management.",
+      "Product Browsing: Filter and sort products by category, price, brand, etc.",
+      "Shopping Cart: Add/remove products, update quantities, and view cart summary.",
+      "Checkout Process: Secure payments via PayPal or Cash on Delivery (COD).",
+      "Order Tracking: View order history and order details.",
+      "Responsive Design: Mobile-first UI with Tailwind CSS.",
+      "Chatbot Support: Predefined FAQs for quick customer support.",
+      "Admin Dashboard: Manage users, products, and orders with image uploads via Cloudinary."
+    ],
+    "prerequisites": [
+      "Node.js (v18+)",
+      "npm or yarn",
+      "MongoDB instance",
+      "Cloudinary account (for image uploads)",
+      "PayPal sandbox credentials (for testing payments)"
+    ],
+    "techStack": {
+      "frontend": [
+        "React.js (Vite)",
+        "TailwindCSS",
+        "Redux Toolkit",
+        "React Router",
+        "Axios"
+      ],
+      "backend": [
+        "Node.js",
+        "Express.js",
+        "MongoDB with Mongoose",
+        "JWT",
+        "Multer",
+        "Cloudinary"
+      ],
+      "payments": [
+        "PayPal React SDK"
+      ],
+      "other": [
+        "ESLint",
+        "CORS",
+        "dotenv"
+      ]
+    }
+  },
+  {
+    "id": "tp-link",
+    "title": "TP-Link Campus Identity",
+    "image": "tplink.png",
+    "description": "An identity-based network security system for campuses that uses a student's admission number as the security boundary instead of physical location. It integrates with TP-Link Omada infrastructure to automatically assign VLANs and control network access based on who you are, not where you connect â€” the core idea being \"WHO you are determines network access, not WHERE you connect.\" A single admission number controls access across all campus systems, with automatic role-based VLAN assignment and complete identity-correlated audit trails.",
+    "shortDescription": "Zero-trust campus network where identity (admission number) â€” not location â€” controls access. Integrates with TP-Link Omada for automatic role-based VLAN assignment via RADIUS + Keycloak SSO.",
+    "codeUrl": "https://github.com/codedpool/TP-link",
+    "technologies": [
+      "Next.js 14",
+      "Keycloak",
+      "RADIUS",
+      "TP-Link Omada",
+      "Node.js"
+    ],
+    "category": "Network Security",
+    "year": "2025",
+    "featured": false,
+    "features": [
+      "Identity-Centric Zero Trust: Access is controlled by verified admission numbers rather than physical location â€” 'WHO you are determines network access, not WHERE you connect' â€” with role-based VLAN assignment for students, faculty, and admins, and complete identity-correlated audit trails.",
+      "Network Access Control: RADIUS protocol integration with TP-Link Omada dynamically assigns VLANs by user role, with real-time session management and monitoring.",
+      "Single Sign-On: Keycloak-backed OAuth2/OIDC SSO across campus portals (LMS, Library, Admin) gives users automatic network access with no manual configuration.",
+      "Real-Time Admin Console: Approve or block users with instant network impact, monitor live sessions with identity tracking, and manage accounts through Keycloak integration.",
+      "Omada Hardware Integration: Designed for TP-Link EAP660 HD / EAP245 access points, TL-SG3428 managed VLAN switches, an ER7206 VPN router, and OC200/OC300 Omada controllers.",
+      "Per-User Policy: Dynamic VLAN assignment and per-user bandwidth control enforced at the network edge."
+    ],
+    "prerequisites": [
+      "Node.js 18+",
+      "Docker & Docker Compose",
+      "Keycloak configured with campus realm settings",
+      "Git"
+    ],
+    "techStack": {
+      "frontend": [
+        "Next.js 14",
+        "NextAuth.js"
+      ],
+      "backend": [
+        "Node.js",
+        "Next.js API Routes",
+        "RADIUS simulation"
+      ],
+      "identityAndSecurity": [
+        "Keycloak",
+        "OAuth2 / OIDC",
+        "JWT"
+      ],
+      "hardware": [
+        "TP-Link Omada (OC200/OC300)",
+        "EAP660 HD / EAP245 APs",
+        "TL-SG3428 switch",
+        "ER7206 router"
+      ],
+      "protocols": [
+        "RADIUS",
+        "Dynamic VLAN assignment",
+        "Per-user bandwidth control"
+      ]
+    }
+  }
+]
