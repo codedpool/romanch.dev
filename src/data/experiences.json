@@ -27,6 +27,20 @@
     ]
   },
   {
+    "id": "mlh-coach",
+    "role": "Coach",
+    "company": "Major League Hacking (MLH)",
+    "type": "Part Time Â· Hackathon Mentorship & Judging",
+    "location": null,
+    "liveUrl": null,
+    "startDate": "January 2026",
+    "endDate": "Present",
+    "current": true,
+    "bullets": [
+      "Contributing to the organization of hackathons, mentoring participants on project development and technical execution, and serving as a judge for evaluating submissions."
+    ]
+  },
+  {
     "id": "veersa-intern",
     "role": "Software Engineer Intern",
     "company": "Veersa Technologies",
@@ -77,20 +91,6 @@
       "Engineered the HouseTour real-estate video pipeline: two chained inference calls, passing the last frame and context forward, merged into a seamless 30s clip past the 15s generation cap.",
       "Shipped Ad Studio (site scrape, brand kit, ad templates).",
       "Shipped a transitions app with 24+ templates."
-    ]
-  },
-  {
-    "id": "mlh-coach",
-    "role": "Coach",
-    "company": "Major League Hacking (MLH)",
-    "type": "Part Time Â· Hackathon Mentorship & Judging",
-    "location": null,
-    "liveUrl": null,
-    "startDate": "January 2026",
-    "endDate": "Present",
-    "current": true,
-    "bullets": [
-      "Contributing to the organization of hackathons, mentoring participants on project development and technical execution, and serving as a judge for evaluating submissions."
     ]
   },
   {
