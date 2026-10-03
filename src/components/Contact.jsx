@@ -4,7 +4,6 @@ import { ArrowUpRight } from 'lucide-react';
 
 const CONTACTS = [
   { label: 'Email', value: 'romanchroshansingh@gmail.com', href: 'mailto:romanchroshansingh@gmail.com' },
-  { label: 'Phone', value: '+91 91558 08901', href: 'tel:+919155808901' },
   { label: 'LinkedIn', value: 'linkedin.com/in/romanch11', href: 'https://www.linkedin.com/in/romanch11/' },
   { label: 'GitHub', value: 'github.com/codedpool', href: 'https://github.com/codedpool' },
 ];

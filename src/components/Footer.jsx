@@ -1,6 +1,6 @@
 "use client";
 
-import { Phone, Linkedin, Github } from 'lucide-react';
+import { Linkedin, Github } from 'lucide-react';
 
 export default function Footer() {
   const scrollToSection = (sectionId) => {
@@ -16,7 +16,6 @@ export default function Footer() {
   ];
 
   const socials = [
-    { icon: Phone, href: 'tel:+919155808901', label: 'Call' },
     { icon: Linkedin, href: 'https://www.linkedin.com/in/romanch11/', label: 'LinkedIn' },
     { icon: Github, href: 'https://github.com/codedpool', label: 'GitHub' },
   ];
